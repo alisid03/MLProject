@@ -234,7 +234,7 @@ def train(agent, episodes=10000):
     plt.plot(episodes_range, [1 - rate for rate in win_rates], label='Loss Rate')
     plt.plot(episodes_range, draw_rates, label='Draw Rate')
     plt.xlabel('Episodes')
-    plt.ylabel('Rate / Length')
+    plt.ylabel('Rate/Length')
     plt.title('Performance Metrics over Episodes')
     plt.legend()
     plt.savefig('combined_metrics_plot.png')
@@ -283,5 +283,5 @@ agent = QLearningAgent(game)
 train(agent, episodes=9000)  # Train the agent
 
 # Now decide if playing against the agent or let it play against itself
-# mode = input("Type 'human' to play against the agent, anything else to watch it play against itself: ").strip().lower()
-# play_game(agent, human=(mode == 'human'))
+mode = input("Type 'human' to play against the agent, anything else to watch it play against itself: ").strip().lower()
+play_game(agent, human=(mode == 'human'))
